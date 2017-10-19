@@ -23,7 +23,7 @@ type Client struct {
 
 func NewClient(secret, key, passphrase string, sandboxMode bool) *Client {
 	var url string
-	if sandbox {
+	if sandboxMode {
 		url = "https://https://public.sandbox.gdax.com"
 	} else {
 		url = "https://api.gdax.com"
