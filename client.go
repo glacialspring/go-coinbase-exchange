@@ -21,15 +21,9 @@ type Client struct {
 	HttpClient *http.Client
 }
 
-func NewClient(secret, key, passphrase string, sandboxMode bool) *Client {
-	var url string
-	if sandboxMode {
-		url = "https://public.sandbox.gdax.com"
-	} else {
-		url = "https://api.gdax.com"
-	}
+func NewClient(secret, key, passphrase string) *Client {
 	client := Client{
-		BaseURL:    url,
+		BaseURL:    "https://api.gdax.com",
 		Secret:     secret,
 		Key:        key,
 		Passphrase: passphrase,
